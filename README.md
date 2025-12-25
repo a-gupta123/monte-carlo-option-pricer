@@ -20,27 +20,27 @@ It demonstrates how antithetic variates reduce variance by pairing negatively co
 
 The underlying asset price follows Geometric Brownian Motion (GBM) under the risk-neutral measure:
 
-$\[
+$$
 S_T = S_0 \exp\left((r - \tfrac{1}{2}\sigma^2)T + \sigma\sqrt{T}Z\right), \quad Z \sim \mathcal{N}(0,1)
-\]$
+$$
 
 The European call option price is estimated as:
 
-$\[
+$$
 C_0 = \mathbb{E}\left[e^{-rT}\max(S_T - K, 0)\right]
-\]$
+$$
 
 ---
 
 ## Methods Implemented
 
 ### 1. Traditional Monte Carlo
-- Simulates independent terminal prices \( S_T \)
+- Simulates independent terminal prices $S_T$
 - Estimates the discounted payoff mean
 - Outputs standard error and 95% confidence intervals
 
 ### 2. Antithetic Variates Monte Carlo (Variance Reduction)
-- For each normal draw \( Z \), also simulates \( -Z \)
+- For each normal draw $Z$, also simulates $-Z$
 - Averages the paired payoffs into a single Monte Carlo observation
 - Introduces perfect negative correlation between samples
 - Reduces estimator variance for call options
@@ -56,7 +56,7 @@ C_0 = \mathbb{E}\left[e^{-rT}\max(S_T - K, 0)\right]
 
 - Monte Carlo estimates converge to the Black–Scholes price as the number of simulations increases
 - Antithetic variates significantly reduce estimator variance as shown by reduced standard error
-- Black–Scholes price consistently falls within Monte Carlo confidence bands for large \( N \)
+- Black–Scholes price consistently falls within Monte Carlo confidence bands for large $N$
 
 ---
 
