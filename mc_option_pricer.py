@@ -56,9 +56,9 @@ def convergence_plot(S0, K, r, vol, T, N):
     antithetic_prices = []
     antithetic_ci_lows = []
     antithetic_ci_highs = []
-    for i, N in enumerate(N):
-        p_original, _, _, _ = mc_call(S0, K, r, vol, T, N)
-        p_anti, lo_anti, hi_anti, _ = mc_call_with_antithetic_variates(S0, K, r, vol, T, N)
+    for n in N:
+        p_original, _, _, _ = mc_call(S0, K, r, vol, T, n)
+        p_anti, lo_anti, hi_anti, _ = mc_call_with_antithetic_variates(S0, K, r, vol, T, n)
         original_prices.append(p_original)
         antithetic_prices.append(p_anti)
         antithetic_ci_lows.append(lo_anti)
@@ -76,6 +76,7 @@ def convergence_plot(S0, K, r, vol, T, N):
     plt.title("Convergence Plot")
     plt.legend()
     plt.tight_layout()
+    plt.savefig("convergence_plot.png", dpi=200, bbox_inches="tight")
     plt.show()
 
 # Parameters
@@ -85,7 +86,7 @@ r = 0.05   # risk-free rate (%)
 vol = 0.2  # volatility (%)
 T = 1      # time to maturity in years
 
-# Number of Monte Carlo paths used for price estimation in terminal output
+# Number of Monte Carlo simulations used for price estimation in terminal output
 N = 10000
 
 original_price, original_lo, original_hi, original_se = mc_call(S0, K, r, vol, T, N)
