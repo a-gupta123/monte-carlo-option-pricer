@@ -21,7 +21,7 @@ It demonstrates how antithetic variates reduce variance by pairing negatively co
 The underlying asset price follows Geometric Brownian Motion (GBM) under the risk-neutral measure:
 
 $$
-S_T = S_0 \exp(\left((r - \tfrac{1}{2}\sigma^2)T + \sigma\sqrt{T}Z\right)), \quad Z \sim \mathcal{N}(0,1)
+S_T = S_0 \exp\left((r - \tfrac{1}{2}\sigma^2)T + \sigma\sqrt{T}Z\right), \quad Z \sim \mathcal{N}(0,1)
 $$
 
 The European call option price is estimated as:
