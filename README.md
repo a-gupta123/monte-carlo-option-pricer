@@ -67,6 +67,8 @@ The convergence plot compares:
 - Antithetic Monte Carlo estimates with 95% confidence intervals
 - Black–Scholes benchmark
 
+![Convergence Plot](convergence_plot.png)
+
 ---
 
 ## How to Run
