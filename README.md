@@ -27,7 +27,8 @@ $$
 The European call option price is estimated as:
 
 $$
-C_0 = E[e^{-rT} max(ST − K, 0)]
+C₀ = E[ e^{-rT} max(ST − K, 0) ]
+
 $$
 
 ---
