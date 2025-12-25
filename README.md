@@ -74,4 +74,3 @@ The convergence plot compares:
 Install dependencies:
 ```bash
 pip install numpy scipy matplotlib
-python mc_option_pricer.py
